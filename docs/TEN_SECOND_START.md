@@ -34,9 +34,25 @@ Remote URL (no auth):
 https://connector.rarefied.earth/public/mcp
 ```
 
-### Cursor (example)
+### Cursor (fastest: one click)
 
-In MCP settings / `mcp.json`, add a remote Streamable HTTP server pointed at that URL. No bearer token.
+No Marketplace plugin required for first value. Click:
+
+[Add Groundwork in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=groundwork&config=eyJ1cmwiOiJodHRwczovL2Nvbm5lY3Rvci5yYXJlZmllZC5lYXJ0aC9wdWJsaWMvbWNwIn0=)
+
+Or paste into `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "groundwork": {
+      "url": "https://connector.rarefied.earth/public/mcp"
+    }
+  }
+}
+```
+
+Product page with copy-paste for other hosts: https://rarefied.earth/groundwork/#gw-connect
 
 ### Claude / Codex / Cowork / other MCP hosts
 
