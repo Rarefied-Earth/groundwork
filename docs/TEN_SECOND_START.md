@@ -102,7 +102,8 @@ openclaw mcp probe groundwork
 ## What this is not
 
 - Not your company feed. Tenant tools live at `https://connector.rarefied.earth/mcp` with a bearer token after trial or deployment.
-- Not open-source product source. This repo is docs; runtime source stays closed.
+- Not open-source product source. This repo includes a static local discovery
+  demo; production runtime source stays closed.
 - Not a REST "Groundwork API." MCP tools are the product interface.
 
 ---

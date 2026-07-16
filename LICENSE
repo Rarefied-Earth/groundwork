@@ -1,0 +1,28 @@
+Rarefied Earth Evaluation License
+
+Copyright © Earth Evocation Inc. d/b/a Rarefied Earth. All rights reserved.
+
+Permission is granted to read, link to, and quote this documentation with
+attribution, and to run the repository's local static discovery server for
+evaluation, registry introspection, and education.
+
+This permission does not grant the right to:
+
+- claim ownership of the Groundwork product, name, or marks;
+- redistribute this repository as open-source software;
+- use the local discovery server as the hosted Groundwork product;
+- reverse engineer, scrape, or republish the live connector, dashboard, module
+  delivery package, tenant data, or credentials; or
+- imply that cloning this repository installs Groundwork's production tenant
+  feed or operating substrate.
+
+The local discovery server contains synthetic public fixtures only. Groundwork
+production source, installers, tenant credentials, and module packages remain
+proprietary.
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+NONINFRINGEMENT.
+
+For the live product and current commercial terms:
+https://rarefied.earth/groundwork

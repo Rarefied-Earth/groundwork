@@ -1,0 +1,19 @@
+{
+  "name": "@rarefied-earth/groundwork-discovery-mcp",
+  "version": "1.5.1",
+  "private": true,
+  "description": "Static local Groundwork discovery MCP for registries and evaluation.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/server.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "4.3.5"
+  }
+}

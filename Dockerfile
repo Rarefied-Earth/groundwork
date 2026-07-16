@@ -1,9 +1,9 @@
-FROM node:22-alpine
+FROM node:22-bookworm-slim
 
-RUN npm install --global mcp-remote@0.1.38 \
-    && npm cache clean --force
+WORKDIR /app
+COPY --chown=node:node package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+COPY --chown=node:node server.js ./
 
 USER node
-ENV MCP_REMOTE_CONFIG_DIR=/tmp/mcp-remote
-
-ENTRYPOINT ["mcp-remote", "https://connector.rarefied.earth/public/mcp", "--transport", "http-only"]
+ENTRYPOINT ["node", "server.js"]
