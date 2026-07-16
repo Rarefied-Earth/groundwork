@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Your agents should know your company.</strong><br />
-  Operating substrate for any MCP-compatible client (Cursor, Claude, Codex, Cowork, and others).<br />
+  Operating substrate for any MCP-compatible client (Cursor, Claude, Codex, Cowork, OpenClaw, and others).<br />
   Built and dogfooded daily by <a href="https://rarefied.earth">Rarefied Earth</a>.
 </p>
 
@@ -93,7 +93,16 @@ connector.rarefied.earth/mcp   (read-only, tenant-scoped)
 
 Groundwork's product interface is **MCP** (Model Context Protocol) over Streamable HTTP at `connector.rarefied.earth/mcp`, not a Cursor plugin and not a Claude-only connector.
 
-Any client that can attach a remote MCP server with a bearer token can use the same feed: Cursor, Claude, Codex, Cowork, Windsurf, custom agents, and the Groundwork CLI. Cursor and Claude are the first-class setup paths we document today. The protocol is not limited to them.
+Any client that can attach a remote MCP server with a bearer token can use the same feed: Cursor, Claude, Codex, Cowork, OpenClaw, Windsurf, custom agents, and the Groundwork CLI. Cursor and Claude are the first-class setup paths we document today. The protocol is not limited to them.
+
+OpenClaw can add the public proof endpoint directly:
+
+```bash
+openclaw mcp add groundwork \
+  --url https://connector.rarefied.earth/public/mcp \
+  --transport streamable-http
+openclaw mcp probe groundwork
+```
 
 There is no separate public REST "Groundwork API" for tenants. The MCP tools *are* the product interface. The CLI and dashboards read the same feed.
 
@@ -125,7 +134,7 @@ Prove the product is live before checkout:
 curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scripts/groundwork_ten_second.py | python3 -
 ```
 
-Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`.
+Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`, `groundwork_public_status`, then `demo_resume`.
 
 Details: [`docs/TEN_SECOND_START.md`](docs/TEN_SECOND_START.md)
 
