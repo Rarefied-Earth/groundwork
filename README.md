@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Your agents should know your company.</strong><br />
-  Operating substrate for Claude, Cursor, and MCP clients.<br />
+  Operating substrate for any MCP-compatible client (Cursor, Claude, Codex, Cowork, and others).<br />
   Built and dogfooded daily by <a href="https://rarefied.earth">Rarefied Earth</a>.
 </p>
 
@@ -80,6 +80,15 @@ connector.rarefied.earth/mcp   (read-only, tenant-scoped)
 
 ---
 
+
+## Works with any MCP-compatible client
+
+Groundwork's product interface is **MCP** (Model Context Protocol) over Streamable HTTP at `connector.rarefied.earth/mcp`, not a Cursor plugin and not a Claude-only connector.
+
+Any client that can attach a remote MCP server with a bearer token can use the same feed: Cursor, Claude, Codex, Cowork, Windsurf, custom agents, and the Groundwork CLI. Cursor and Claude are the first-class setup paths we document today. The protocol is not limited to them.
+
+There is no separate public REST "Groundwork API" for tenants. The MCP tools *are* the product interface. The CLI and dashboards read the same feed.
+
 ## Free to evaluate. Source stays closed.
 
 This is the traction model on purpose:
@@ -102,7 +111,7 @@ That split is how you get GitHub discovery without giving away the system Rarefi
 
 ```text
 1. Start the 14-day free trial     →  https://rarefied.earth/groundwork
-2. Connect MCP in Cursor / Claude  →  token from your dashboard
+2. Connect MCP in your client     →  token from your dashboard
 3. Ask: company_status             →  full operating picture
 4. Ask: get_brand / get_voice_rules before any branded draft
 ```
