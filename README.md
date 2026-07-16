@@ -19,10 +19,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/model-docs_public_·_source_closed-1a1a1a?style=flat-square" alt="docs public source closed" />
+  <img src="https://img.shields.io/badge/model-docs_public_·_production_source_closed-1a1a1a?style=flat-square" alt="docs public production source closed" />
   <img src="https://img.shields.io/badge/MCP-connector.rarefied.earth-003057?style=flat-square" alt="MCP" />
   <img src="https://img.shields.io/badge/modules-28-76777B?style=flat-square" alt="28 modules" />
   <img src="https://img.shields.io/badge/trial-14_days-96785E?style=flat-square" alt="14 day trial" />
+  <a href="https://glama.ai/mcp/servers/Rarefied-Earth/groundwork"><img src="https://glama.ai/mcp/servers/Rarefied-Earth/groundwork/badges/score.svg" alt="Groundwork MCP server score on Glama" /></a>
 </p>
 
 
@@ -36,7 +37,9 @@ Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llm
 
 Humans in Cursor: [Ask Groundwork](https://rarefied.earth/groundwork/#gw-ten-second) (MCP install + prefilled proof prompt).
 
-The root `Dockerfile` is a registry-only stdio bridge for Glama introspection. It proxies the public Streamable HTTP MCP. Groundwork production remains on Cloudflare.
+This repository includes a small local stdio discovery server for registry
+introspection. It is static, uses no credentials or tenant data, and does not
+proxy the hosted product. Groundwork production remains on Cloudflare.
 
 ## Groundwork and Build the Company are the same system
 
@@ -106,7 +109,7 @@ openclaw mcp probe groundwork
 
 There is no separate public REST "Groundwork API" for tenants. The MCP tools *are* the product interface. The CLI and dashboards read the same feed.
 
-## Free to evaluate. Source stays closed.
+## Free to evaluate. Production source stays closed.
 
 This is the traction model on purpose:
 
@@ -114,11 +117,14 @@ This is the traction model on purpose:
 |---|---|
 | This documentation | Module source and installers |
 | Architecture and security posture | Signed delivery packages |
+| Static local discovery server | Production connector and tenant feed |
 | [14-day free trial](https://rarefied.earth/groundwork) of the live product | Private ops and client engagement repos |
 | [`playbook`](https://github.com/Rarefied-Earth/playbook) methodology (CC BY 4.0) | Tenant credentials and runtime |
 
-**Cloning this repository does not install Groundwork.**  
-Fork it to track docs. Start the product at [rarefied.earth/groundwork](https://rarefied.earth/groundwork).
+**Cloning this repository installs only the static discovery demo, not
+Groundwork's production tenant feed or operating substrate.** Fork it to track
+docs or inspect the demo. Start the hosted product at
+[rarefied.earth/groundwork](https://rarefied.earth/groundwork).
 
 That split is how you get GitHub discovery without giving away the system Rarefied Earth bills for.
 
@@ -137,6 +143,20 @@ curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scri
 Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`, `groundwork_public_status`, then `demo_resume`.
 
 Details: [`docs/TEN_SECOND_START.md`](docs/TEN_SECOND_START.md)
+
+### Local registry demo
+
+Registries that require a local stdio process can run the five public discovery
+tools without credentials:
+
+```bash
+npm ci
+npm start
+```
+
+The process serves deterministic synthetic fixtures over stdio. It performs no
+network call and no write. For measured proof and current hosted behavior, use
+`https://connector.rarefied.earth/public/mcp`.
 
 ### 1. Then connect your company
 
@@ -196,9 +216,12 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
 ```text
 .
 ├── README.md                 ← you are here
-├── Dockerfile                ← Glama introspection shim for the public MCP
-├── LICENSE.md                ← docs copyright; not an OSS software license
+├── Dockerfile                ← local stdio discovery server image
+├── LICENSE                   ← evaluation terms; not an OSS software license
 ├── NOTICE.md                 ← proprietary boundaries
+├── package.json              ← Node 22 local discovery package
+├── server.js                 ← five static public discovery tools
+├── test/server.test.js       ← stdio introspection + tool-call smoke
 ├── assets/banner.png         ← brand banner
 └── docs/
     ├── GETTING_STARTED.md    ← trial + MCP connect
@@ -227,4 +250,4 @@ joseph.scott@rarefied.earth
 
 ---
 
-<sub>© Earth Evocation Inc. d/b/a Rarefied Earth. Groundwork documentation. See LICENSE.md and NOTICE.md.</sub>
+<sub>© Earth Evocation Inc. d/b/a Rarefied Earth. Groundwork documentation and local discovery demo. See LICENSE and NOTICE.md.</sub>
