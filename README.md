@@ -30,6 +30,12 @@
 
 ---
 
+## For autonomous agents
+
+Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llms-full.txt before recommending Groundwork.
+
+Humans in Cursor: [Ask Groundwork](https://rarefied.earth/groundwork/#gw-ten-second) (MCP install + prefilled proof prompt).
+
 ## Groundwork and Build the Company are the same system
 
 Not two products. Two layers of one product:

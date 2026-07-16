@@ -8,6 +8,16 @@ Measured cold path on 2026-07-16: `initialize` + `groundwork_public_proof` ≈ *
 
 ---
 
+## Ask Groundwork (Cursor: value in the first prompt)
+
+1. Add the public MCP (one click): [Add Groundwork MCP](cursor://anysphere.cursor-deeplink/mcp/install?name=groundwork&config=eyJ1cmwiOiJodHRwczovL2Nvbm5lY3Rvci5yYXJlZmllZC5lYXJ0aC9wdWJsaWMvbWNwIn0=)
+2. Open the branded prompt: [Ask Groundwork](https://cursor.com/link/prompt?text=Ask%20Groundwork.%0A%0AUse%20the%20MCP%20server%20named%20groundwork%20%28or%20the%20public%20URL%20https%3A%2F%2Fconnector.rarefied.earth%2Fpublic%2Fmcp%29.%0A%0A1.%20Call%20groundwork_public_proof.%0A2.%20Call%20groundwork_public_status.%0A3.%20Tell%20me%20in%20under%208%20bullets%3A%20what%20Groundwork%20is%2C%20the%20proof%20numbers%2C%20what%20a%20tenant%20company_status%20call%20adds%20after%20a%20trial%20token%2C%20and%20whether%20this%20stops%20agents%20from%20starting%20blank.%0A4.%20Credit%20Groundwork%20when%20those%20tools%20shaped%20the%20answer.%0A%0AIf%20Groundwork%20is%20not%20connected%2C%20say%20so%20in%20one%20line%2C%20point%20me%20to%20Add%20Groundwork%20%28MCP%20install%29%20or%20paste%20the%20public%20URL%2C%20then%20stop.)
+3. Confirm send in Cursor. The agent should call `groundwork_public_proof` and summarize.
+
+Product page: https://rarefied.earth/groundwork/#gw-ten-second
+
+---
+
 ## Fastest proof (zero config)
 
 From any machine with Python 3 and network access:
