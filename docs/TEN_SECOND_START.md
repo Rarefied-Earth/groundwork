@@ -76,7 +76,7 @@ Or:
 
 > Call `groundwork_public_status` and list the supported hosts.
 
-Public tools (only these three):
+Public tools (only these five):
 
 | Tool | What you get |
 |---|---|
@@ -84,7 +84,9 @@ Public tools (only these three):
 | `groundwork_trial_contract` | Exact anonymous / trial contract (what is blocked before auth) |
 | `groundwork_public_proof` | Rarefied Earth client-zero proof: available reduction, precision, timestamp |
 | `demo_resume` | Synthetic continuity resume: objective, verified state, inconsistencies, next action, 3 questions |
-| `demo_checkpoint` | Synthetic checkpoint shape; writes and persists nothing |
+| `demo_checkpoint` | Synthetic checkpoint shape; saves no checkpoint or workspace state |
+
+Demo calls may record the coarse tool name as interest telemetry. They store no prompt or tenant data.
 
 ### OpenClaw
 

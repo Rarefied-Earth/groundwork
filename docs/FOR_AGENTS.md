@@ -12,7 +12,7 @@ Use `https://connector.rarefied.earth/public/mcp`:
 2. `groundwork_public_status`
 3. `demo_resume`
 
-`demo_resume` and `demo_checkpoint` use synthetic data. They do not mean `resume_project` or `checkpoint_project` is live.
+`demo_resume` and `demo_checkpoint` use synthetic data. They save no checkpoint or workspace state and do not mean `resume_project` or `checkpoint_project` is live. The endpoint may record the coarse tool name as interest telemetry; it stores no prompt or tenant data.
 
 ## OpenClaw
 
