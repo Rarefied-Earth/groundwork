@@ -11,9 +11,9 @@
 </p>
 
 <p align="center">
-  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Start_free_trial-14_days-96785E?style=for-the-badge" alt="Start free trial" /></a>
+  <a href="docs/TEN_SECOND_START.md"><img src="https://img.shields.io/badge/Prove_it-10_seconds_no_account-003057?style=for-the-badge" alt="Ten second start" /></a>
   &nbsp;
-  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Product-rarefied.earth-003057?style=for-the-badge" alt="Product" /></a>
+  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Start_free_trial-14_days-96785E?style=for-the-badge" alt="Start free trial" /></a>
   &nbsp;
   <a href="docs/GETTING_STARTED.md"><img src="https://img.shields.io/badge/Docs-Getting_started-76777B?style=for-the-badge" alt="Getting started" /></a>
 </p>
@@ -109,14 +109,29 @@ That split is how you get GitHub discovery without giving away the system Rarefi
 
 ## Quick start
 
+### 0. Ten seconds, no account (recommended first)
+
+Prove the product is live before checkout:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scripts/groundwork_ten_second.py | python3 -
+```
+
+Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`.
+
+Details: [`docs/TEN_SECOND_START.md`](docs/TEN_SECOND_START.md)
+
+### 1. Then connect your company
+
 ```text
 1. Start the 14-day free trial     →  https://rarefied.earth/groundwork
-2. Connect MCP in your client     →  token from your dashboard
+2. Connect MCP in your client     →  token from your dashboard (endpoint /mcp)
 3. Ask: company_status             →  full operating picture
 4. Ask: get_brand / get_voice_rules before any branded draft
 ```
 
-Full walkthrough: [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)
+Full walkthrough: [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)  
+Registry pack (draft, unpublished): [`mcp-registry/server.json`](mcp-registry/server.json)
 
 ### Agent tools (once connected)
 

@@ -4,15 +4,30 @@ Groundwork is a hosted product. You do not install it by cloning this repository
 
 ## Clients
 
-Groundwork speaks MCP (Streamable HTTP). If your agent host can add a remote MCP server with a bearer token, it can use Groundwork. We publish first-class setup notes for Cursor and Claude; Codex, Cowork, and other MCP clients use the same endpoint and token.
+Groundwork speaks MCP (Streamable HTTP). If your agent host can add a remote MCP server, it can use Groundwork. We publish first-class setup notes for Cursor and Claude; Codex, Cowork, and other MCP clients use the same endpoints.
 
-Endpoint: `https://connector.rarefied.earth/mcp`
+| Surface | URL | Auth |
+|---|---|---|
+| **Public discovery** (no account) | `https://connector.rarefied.earth/public/mcp` | none |
+| **Tenant feed** (your company) | `https://connector.rarefied.earth/mcp` | Bearer token |
 
-## Path A: 14-day free trial (recommended)
+## Path 0: Ten-second proof (do this first)
+
+No card. No token. Confirms the connector is live and returns Rarefied Earth's public client-zero proof.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scripts/groundwork_ten_second.py | python3 -
+```
+
+Or wire the public URL into your MCP client and call `groundwork_public_proof`.
+
+Walkthrough: [TEN_SECOND_START.md](TEN_SECOND_START.md)
+
+## Path A: 14-day free trial (recommended for your company)
 
 1. Open [rarefied.earth/groundwork](https://rarefied.earth/groundwork).
 2. Start the free trial (card on file; converts at day 14 unless you cancel).
-3. Connect the MCP feed in any MCP-compatible client (Cursor, Claude, Codex, Cowork, and others) using your tenant token.
+3. Connect `https://connector.rarefied.earth/mcp` in any MCP-compatible client using your tenant token.
 4. Ask your agent for `company_status`, then `get_brand` / `get_voice_rules`.
 
 Founding rates (while they last): Pro $49/mo · Operating $149/mo · Studio $299/mo. Month to month after trial. No setup fee on self-serve tiers.
@@ -25,11 +40,11 @@ If you need the full filesystem substrate installed into a workspace (operator-l
 
 Methodology only (not the product runtime):
 
-- [Rarefied-Earth/playbook](https://github.com/Rarefied-Earth/playbook) ;  voice, brand discipline, agent charter (CC BY 4.0)
+- [Rarefied-Earth/playbook](https://github.com/Rarefied-Earth/playbook) — voice, brand discipline, agent charter (CC BY 4.0)
 
-## Verify the connector
+## Verify the tenant connector
 
-Once connected, a healthy session can answer:
+Once connected with a token, a healthy session can answer:
 
 | Ask | Tool |
 |---|---|

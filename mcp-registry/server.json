@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Rarefied-Earth/groundwork",
+  "title": "Groundwork",
+  "description": "Company-state MCP for operating SMBs: brand, voice, charter, priorities, entitled modules and skills. Public discovery is anonymous; tenant feed requires a bearer token after trial or deployment.",
+  "websiteUrl": "https://rarefied.earth/groundwork",
+  "repository": {
+    "url": "https://github.com/Rarefied-Earth/groundwork",
+    "source": "github"
+  },
+  "version": "1.4.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://connector.rarefied.earth/public/mcp"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://connector.rarefied.earth/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer token from your Groundwork dashboard (tenant feed). Not required for /public/mcp.",
+          "isRequired": true,
+          "isSecret": true,
+          "value": "Bearer ${GROUNDWORK_TOKEN}"
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "publisher": "Rarefied Earth",
+      "docs": "https://github.com/Rarefied-Earth/groundwork",
+      "ten_second_start": "https://github.com/Rarefied-Earth/groundwork/blob/main/docs/TEN_SECOND_START.md",
+      "public_tools": [
+        "groundwork_public_status",
+        "groundwork_trial_contract",
+        "groundwork_public_proof"
+      ],
+      "notes": "Public remote is anonymous discovery only. Authenticated remote is the product feed. Source remains closed; this repository is documentation."
+    }
+  }
+}
