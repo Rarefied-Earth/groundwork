@@ -19,9 +19,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/model-docs_public_·_source_closed-1a1a1a?style=flat-square" alt="docs public source closed" />
   <img src="https://img.shields.io/badge/MCP-connector.rarefied.earth-003057?style=flat-square" alt="MCP" />
-  <img src="https://img.shields.io/badge/modules-27-76777B?style=flat-square" alt="27 modules" />
+  <img src="https://img.shields.io/badge/modules-28-76777B?style=flat-square" alt="28 modules" />
   <img src="https://img.shields.io/badge/trial-14_days-96785E?style=flat-square" alt="14 day trial" />
 </p>
+
+---
+
+## Groundwork and Build the Company are the same system
+
+Not two products. Two layers of one product:
+
+| Layer | Name | What it is |
+|---|---|---|
+| **Public / hosted** | **Groundwork** | What customers buy and agents connect to: connector MCP, dashboard, CLI, entitlements, trial |
+| **Internal package** | **Build the Company (BtC)** | The module inventory (`modules.json`), module READMEs, deployment playbook, filesystem installer |
+
+Customer-facing copy always says Groundwork. Internal paths stay `Build_The_Company/` and `btc-*` skills. One `modules.json` feeds the connector, the website, and this documentation.
 
 ---
 
@@ -46,7 +59,7 @@ Most AI tools start from zero. Out of the box they do not know:
 |---|---|
 | **Connector (MCP)** | Live company state at `connector.rarefied.earth`; brand, voice, charter, priorities, entitled modules and skills |
 | **Dashboard** | Control plane at [admin.rarefied.earth](https://admin.rarefied.earth); modules, usage, keys, billing |
-| **Substrate** | The module catalog Rarefied Earth runs on itself (27 modules · 6 bundles), served to your tenant by entitlement |
+| **Substrate** | The module catalog Rarefied Earth runs on itself (28 modules · 6 bundles in `modules.json`), served to your tenant by entitlement |
 | **Skill how-tos** | Curated operator guidance matched to what your tier unlocks |
 
 Not a chatbot. Not a second workspace. Your files remain the source of truth; the dashboard is a control plane.
@@ -54,7 +67,7 @@ Not a chatbot. Not a second workspace. Your files remain the source of truth; th
 ```text
 connector.rarefied.earth/mcp   (read-only, tenant-scoped)
 ├── account + entitlement
-├── module catalog (up to 27)
+├── module catalog (from modules.json)
 ├── brand / voice / charter feed
 ├── workspace freshness
 └── skill how-tos (entitled only)
@@ -142,7 +155,8 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
 ├── assets/banner.svg         ← brand banner
 └── docs/
     ├── GETTING_STARTED.md    ← trial + MCP connect
-    └── SECURITY.md           ← data posture + vulnerability contact
+    ├── SECURITY.md           ← data posture + vulnerability contact
+    └── MAINTENANCE.md        ← keep docs in sync with modules.json
 ```
 
 Canonical company org mirror: [Rarefied-Earth/groundwork](https://github.com/Rarefied-Earth/groundwork)
