@@ -23,6 +23,9 @@
   <img src="https://img.shields.io/badge/trial-14_days-96785E?style=flat-square" alt="14 day trial" />
 </p>
 
+
+> **Canonical public docs for Groundwork** (Rarefied Earth org). Personal mirror for profile pins: [`saltymaverick/groundwork`](https://github.com/saltymaverick/groundwork).
+
 ---
 
 ## Groundwork and Build the Company are the same system
@@ -159,7 +162,7 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
     └── MAINTENANCE.md        ← keep docs in sync with modules.json
 ```
 
-Canonical company org mirror: [Rarefied-Earth/groundwork](https://github.com/Rarefied-Earth/groundwork)
+Personal pin mirror: [saltymaverick/groundwork](https://github.com/saltymaverick/groundwork)
 
 ---
 
