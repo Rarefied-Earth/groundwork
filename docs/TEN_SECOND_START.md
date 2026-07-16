@@ -2,7 +2,7 @@
 
 Prove Groundwork is live before you create an account, add a card, or install anything.
 
-This path uses the **public discovery MCP**: read-only metadata only. No tenant data. No writes. No token.
+This path uses the **public discovery MCP**: read-only proof, product metadata, and a synthetic continuity demo. It reads no tenant or caller workspace data and saves no checkpoint or demo state. The endpoint may record the coarse tool name as interest telemetry. No token is required.
 
 Measured cold path on 2026-07-16: `initialize` + `groundwork_public_proof` ≈ **0.13s** against `https://connector.rarefied.earth/public/mcp` (well under 10 seconds).
 
