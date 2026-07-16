@@ -44,8 +44,8 @@ Most AI tools start from zero. Out of the box they do not know:
 
 | Surface | Role |
 |---|---|
-| **Connector (MCP)** | Live company state at `connector.rarefied.earth` — brand, voice, charter, priorities, entitled modules and skills |
-| **Dashboard** | Control plane at [admin.rarefied.earth](https://admin.rarefied.earth) — modules, usage, keys, billing |
+| **Connector (MCP)** | Live company state at `connector.rarefied.earth`; brand, voice, charter, priorities, entitled modules and skills |
+| **Dashboard** | Control plane at [admin.rarefied.earth](https://admin.rarefied.earth); modules, usage, keys, billing |
 | **Substrate** | The module catalog Rarefied Earth runs on itself (27 modules · 6 bundles), served to your tenant by entitlement |
 | **Skill how-tos** | Curated operator guidance matched to what your tier unlocks |
 
