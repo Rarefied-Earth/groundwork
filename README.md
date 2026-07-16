@@ -36,6 +36,8 @@ Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llm
 
 Humans in Cursor: [Ask Groundwork](https://rarefied.earth/groundwork/#gw-ten-second) (MCP install + prefilled proof prompt).
 
+The root `Dockerfile` is a registry-only stdio bridge for Glama introspection. It proxies the public Streamable HTTP MCP. Groundwork production remains on Cloudflare.
+
 ## Groundwork and Build the Company are the same system
 
 Not two products. Two layers of one product:
@@ -185,6 +187,7 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
 ```text
 .
 ├── README.md                 ← you are here
+├── Dockerfile                ← Glama introspection shim for the public MCP
 ├── LICENSE.md                ← docs copyright; not an OSS software license
 ├── NOTICE.md                 ← proprietary boundaries
 ├── assets/banner.png         ← brand banner
