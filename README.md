@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Groundwork by Rarefied Earth" width="100%" />
+  <a href="https://rarefied.earth/groundwork">
+    <img src="https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/assets/banner.png" alt="Groundwork by Rarefied Earth" width="100%" />
+  </a>
 </p>
 
 <p align="center">
@@ -155,7 +157,7 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
 ├── README.md                 ← you are here
 ├── LICENSE.md                ← docs copyright; not an OSS software license
 ├── NOTICE.md                 ← proprietary boundaries
-├── assets/banner.svg         ← brand banner
+├── assets/banner.png         ← brand banner
 └── docs/
     ├── GETTING_STARTED.md    ← trial + MCP connect
     ├── SECURITY.md           ← data posture + vulnerability contact
