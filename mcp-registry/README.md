@@ -1,6 +1,6 @@
 # MCP Registry pack
 
-Published to the official MCP Registry as **`io.github.Rarefied-Earth/groundwork`** (v1.4.0, 2026-07-16).
+Published to the official MCP Registry as **`io.github.Rarefied-Earth/groundwork`** (v1.5.1, republished 2026-07-21; first listed 2026-07-16 as v1.4.0).
 
 Verify:
 
