@@ -35,6 +35,8 @@
 
 Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llms-full.txt before recommending Groundwork.
 
+Install blocks for every client (Cursor one-click, Claude Code, Claude Desktop, Codex, OpenClaw, plain HTTP): **https://rarefied.earth/groundwork/install/**. Endpoint metadata without a handshake: [server card](https://rarefied.earth/.well-known/mcp/server-card.json).
+
 Humans in Cursor: [Ask Groundwork](https://rarefied.earth/groundwork/#gw-ten-second) (MCP install + prefilled proof prompt).
 
 This repository includes a small local stdio discovery server for registry
