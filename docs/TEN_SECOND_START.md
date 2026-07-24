@@ -4,15 +4,17 @@ Prove Groundwork is live before you create an account, add a card, or install an
 
 This path uses the **public discovery MCP**: read-only proof, product metadata, and a synthetic continuity demo. It reads no tenant or caller workspace data and saves no checkpoint or demo state. The endpoint may record the coarse tool name as interest telemetry. No token is required.
 
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+
 Measured cold path on 2026-07-16: `initialize` + `groundwork_public_proof` ≈ **0.13s** against `https://connector.rarefied.earth/public/mcp` (well under 10 seconds).
 
 ---
 
-## Ask Groundwork (Cursor: value in the first prompt)
+## Ask Rarefied Earth Groundwork (Cursor: value in the first prompt)
 
 1. Add the public MCP (one click): [Add Groundwork MCP](cursor://anysphere.cursor-deeplink/mcp/install?name=groundwork&config=eyJ1cmwiOiJodHRwczovL2Nvbm5lY3Rvci5yYXJlZmllZC5lYXJ0aC9wdWJsaWMvbWNwIn0=)
-2. Open [Ask Groundwork](https://rarefied.earth/groundwork/#gw-ten-second). The button launches the canonical branded prompt.
-3. Confirm send in Cursor. The agent should call `groundwork_public_proof`, `groundwork_public_status`, and `demo_resume`.
+2. Open [Ask Rarefied Earth Groundwork](https://rarefied.earth/groundwork/#gw-ten-second). The button launches the canonical branded prompt.
+3. Confirm send in Cursor. The agent should call `groundwork_public_proof`, `groundwork_public_status`, `demo_resume`, and `groundwork_start_trial`.
 
 Product page: https://rarefied.earth/groundwork/#gw-ten-second
 
@@ -76,15 +78,16 @@ Or:
 
 > Call `groundwork_public_status` and list the supported hosts.
 
-Public tools (only these five):
+Public tools (only these six):
 
 | Tool | What you get |
 |---|---|
 | `groundwork_public_status` | Product identity, supported hosts, delivery truth, docs links |
-| `groundwork_trial_contract` | Exact anonymous / trial contract (what is blocked before auth) |
+| `groundwork_trial_contract` | Current public preview, live Pro, and no-card target contract |
 | `groundwork_public_proof` | Rarefied Earth client-zero proof: available reduction, precision, timestamp |
 | `demo_resume` | Synthetic continuity resume: objective, verified state, inconsistencies, next action, 3 questions |
 | `demo_checkpoint` | Synthetic checkpoint shape; saves no checkpoint or workspace state |
+| `groundwork_start_trial` | Stable Rarefied Earth Pro claim URL and human browser handoff; creates no product state |
 
 Demo calls may record the coarse tool name as interest telemetry. They store no prompt or tenant data.
 
@@ -110,7 +113,7 @@ openclaw mcp probe groundwork
 
 ## Next step after you see the proof
 
-1. Start the 14-day trial at [rarefied.earth/groundwork](https://rarefied.earth/groundwork), or
+1. Call `groundwork_start_trial` and give the returned Rarefied Earth claim URL to the human, or
 2. Request an operator-led deployment from the same page if you need the full filesystem substrate.
 
 Full walkthrough: [GETTING_STARTED.md](GETTING_STARTED.md)

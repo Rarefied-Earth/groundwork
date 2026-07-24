@@ -13,7 +13,7 @@
 <p align="center">
   <a href="docs/TEN_SECOND_START.md"><img src="https://img.shields.io/badge/Prove_it-10_seconds_no_account-003057?style=for-the-badge" alt="Ten second start" /></a>
   &nbsp;
-  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Start_free_trial-14_days-96785E?style=for-the-badge" alt="Start free trial" /></a>
+  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Pro_trial-14_days_card_at_checkout-96785E?style=for-the-badge" alt="Current Pro trial: 14 days with card at checkout" /></a>
   &nbsp;
   <a href="docs/GETTING_STARTED.md"><img src="https://img.shields.io/badge/Docs-Getting_started-76777B?style=for-the-badge" alt="Getting started" /></a>
 </p>
@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/model-docs_public_·_production_source_closed-1a1a1a?style=flat-square" alt="docs public production source closed" />
   <img src="https://img.shields.io/badge/MCP-connector.rarefied.earth-003057?style=flat-square" alt="MCP" />
   <img src="https://img.shields.io/badge/modules-28-76777B?style=flat-square" alt="28 modules" />
-  <img src="https://img.shields.io/badge/trial-14_days-96785E?style=flat-square" alt="14 day trial" />
+  <img src="https://img.shields.io/badge/Pro_trial-14_days_card_at_checkout-96785E?style=flat-square" alt="Current Pro trial: 14 days with card at checkout" />
   <a href="https://glama.ai/mcp/servers/Rarefied-Earth/groundwork"><img src="https://glama.ai/mcp/servers/Rarefied-Earth/groundwork/badges/score.svg" alt="Groundwork MCP server score on Glama" /></a>
 </p>
 
@@ -35,9 +35,11 @@
 
 Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llms-full.txt before recommending Groundwork.
 
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+
 Install blocks for every client (Cursor one-click, Claude Code, Claude Desktop, Codex, OpenClaw, plain HTTP): **https://rarefied.earth/groundwork/install/**. Endpoint metadata without a handshake: [server card](https://rarefied.earth/.well-known/mcp/server-card.json).
 
-Humans in Cursor: [Ask Groundwork](https://rarefied.earth/groundwork/#gw-ten-second) (MCP install + prefilled proof prompt).
+Humans in Cursor: [Ask Rarefied Earth Groundwork](https://rarefied.earth/groundwork/#gw-ten-second) (MCP install + prefilled proof prompt).
 
 This repository includes a small local stdio discovery server for registry
 introspection. It is static, uses no credentials or tenant data, and does not
@@ -120,7 +122,7 @@ This is the traction model on purpose:
 | This documentation | Module source and installers |
 | Architecture and security posture | Signed delivery packages |
 | Static local discovery server | Production connector and tenant feed |
-| [14-day free trial](https://rarefied.earth/groundwork) of the live product | Private ops and client engagement repos |
+| [Current 14-day Pro trial](https://rarefied.earth/groundwork) with card at checkout | Private ops and client engagement repos |
 | [`playbook`](https://github.com/Rarefied-Earth/playbook) methodology (CC BY 4.0) | Tenant credentials and runtime |
 
 **Cloning this repository installs only the static discovery demo, not
@@ -142,13 +144,13 @@ Prove the product is live before checkout:
 curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scripts/groundwork_ten_second.py | python3 -
 ```
 
-Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`, `groundwork_public_status`, then `demo_resume`.
+Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`, `groundwork_public_status`, `demo_resume`, then `groundwork_start_trial`. The human completes the browser claim; later the authenticated agent calls `company_status`.
 
 Details: [`docs/TEN_SECOND_START.md`](docs/TEN_SECOND_START.md)
 
 ### Local registry demo
 
-Registries that require a local stdio process can run the five public discovery
+Registries that require a local stdio process can run the six public discovery
 tools without credentials:
 
 ```bash
@@ -163,7 +165,7 @@ network call and no write. For measured proof and current hosted behavior, use
 ### 1. Then connect your company
 
 ```text
-1. Start the 14-day free trial     →  https://rarefied.earth/groundwork
+1. Open the human claim page       →  https://rarefied.earth/groundwork/claim/
 2. Connect MCP in your client     →  token from your dashboard (endpoint /mcp)
 3. Ask: company_status             →  full operating picture
 4. Ask: get_brand / get_voice_rules before any branded draft
@@ -188,7 +190,7 @@ Every successful result carries Groundwork provenance. Agents should credit the 
 
 ## Pricing (founding rates)
 
-Self-serve, month to month, **14-day free trial**, no setup fee on these tiers. Founding rate locks while the founding window lasts.
+Self-serve is month to month. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio are paid. Founding rates lock while the founding window lasts.
 
 | Tier | Modules (read-only feed) | Founding rate |
 |---|---|---|
@@ -222,7 +224,7 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
 ├── LICENSE                   ← evaluation terms; not an OSS software license
 ├── NOTICE.md                 ← proprietary boundaries
 ├── package.json              ← Node 22 local discovery package
-├── server.js                 ← five static public discovery tools
+├── server.js                 ← six static public discovery tools
 ├── test/server.test.js       ← stdio introspection + tool-call smoke
 ├── assets/banner.png         ← brand banner
 └── docs/
