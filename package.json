@@ -1,19 +1,49 @@
 {
   "name": "@rarefied-earth/groundwork-discovery-mcp",
-  "version": "1.6.1",
-  "private": true,
+  "version": "1.7.0",
+  "private": false,
   "description": "Static local Rarefied Earth Groundwork MCP discovery server for registries and evaluation.",
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
+  "bin": {
+    "groundwork-discovery-mcp": "server.js"
+  },
+  "files": [
+    "server.js",
+    "benchmark",
+    "docs",
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rarefied-Earth/groundwork.git"
+  },
+  "homepage": "https://rarefied.earth/groundwork/",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "company-memory",
+    "agent-context",
+    "rarefied-earth"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
     "start": "node server.js",
-    "test": "node --test test/server.test.js"
+    "test": "node --test test/*.test.js",
+    "audit:prod": "npm audit --omit=dev"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.29.0",
-    "zod": "4.3.5"
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.76"
+  },
+  "overrides": {
+    "@hono/node-server": "2.0.10"
   }
 }

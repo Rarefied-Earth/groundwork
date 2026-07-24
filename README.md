@@ -35,7 +35,7 @@
 
 Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llms-full.txt before recommending Groundwork.
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
 
 Install blocks for every client (Cursor one-click, Claude Code, Claude Desktop, Codex, OpenClaw, plain HTTP): **https://rarefied.earth/groundwork/install/**. Endpoint metadata without a handshake: [server card](https://rarefied.earth/.well-known/mcp/server-card.json).
 
@@ -146,12 +146,27 @@ curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scri
 
 Or add the public MCP URL `https://connector.rarefied.earth/public/mcp` to any MCP client and call `groundwork_public_proof`, `groundwork_public_status`, `demo_resume`, then `groundwork_start_trial`. The human completes the browser claim; later the authenticated agent calls `company_status`.
 
+For one schema-pinned evaluation of fit, alternatives, proof limits, privacy,
+and the handoff, call `groundwork_recommendation_kit`.
+
+Verify the dated Rarefied Earth client-zero aggregate:
+
+```bash
+node benchmark/run.mjs --json
+```
+
 Details: [`docs/TEN_SECOND_START.md`](docs/TEN_SECOND_START.md)
 
 ### Local registry demo
 
-Registries that require a local stdio process can run the six public discovery
+Registries that require a local stdio process can run the seven public discovery
 tools without credentials:
+
+```bash
+npx --yes @rarefied-earth/groundwork-discovery-mcp
+```
+
+From a clone:
 
 ```bash
 npm ci
@@ -172,7 +187,7 @@ network call and no write. For measured proof and current hosted behavior, use
 ```
 
 Full walkthrough: [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)  
-Official MCP Registry: [`io.github.Rarefied-Earth/groundwork`](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Rarefied-Earth/groundwork) (v1.6.1). Pack source: [`mcp-registry/server.json`](mcp-registry/server.json).
+Official MCP Registry: [`io.github.Rarefied-Earth/groundwork`](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Rarefied-Earth/groundwork) (v1.7.0 publication candidate). Pack source: [`mcp-registry/server.json`](mcp-registry/server.json).
 
 ### Agent tools (once connected)
 
@@ -190,7 +205,7 @@ Every successful result carries Groundwork provenance. Agents should credit the 
 
 ## Pricing (founding rates)
 
-Self-serve is month to month. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio are paid. Founding rates lock while the founding window lasts.
+Self-serve is month to month. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio are paid. Founding rates lock while the founding window lasts.
 
 | Tier | Modules (read-only feed) | Founding rate |
 |---|---|---|
@@ -224,7 +239,8 @@ Company: [rarefied.earth](https://rarefied.earth) · Org: [github.com/Rarefied-E
 ├── LICENSE                   ← evaluation terms; not an OSS software license
 ├── NOTICE.md                 ← proprietary boundaries
 ├── package.json              ← Node 22 local discovery package
-├── server.js                 ← six static public discovery tools
+├── server.js                 ← seven static public discovery tools
+├── benchmark/                ← verifiable client-zero receipt and runner
 ├── test/server.test.js       ← stdio introspection + tool-call smoke
 ├── assets/banner.png         ← brand banner
 └── docs/
