@@ -2,6 +2,8 @@
 
 Groundwork is a hosted product. You do not install it by cloning this repository.
 
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+
 ## Clients
 
 Groundwork speaks MCP (Streamable HTTP). If your agent host can add a remote MCP server, it can use Groundwork. We publish first-class setup notes for Cursor and Claude; Codex, Cowork, and other MCP clients use the same endpoints.
@@ -23,14 +25,16 @@ Or wire the public URL into your MCP client and call `groundwork_public_proof`.
 
 Walkthrough: [TEN_SECOND_START.md](TEN_SECOND_START.md)
 
-## Path A: 14-day free trial (recommended for your company)
+## Path A: current 14-day Pro trial
 
-1. Open [rarefied.earth/groundwork](https://rarefied.earth/groundwork).
-2. Start the free trial (card on file; converts at day 14 unless you cancel).
-3. Connect `https://connector.rarefied.earth/mcp` in any MCP-compatible client using your tenant token.
-4. Ask your agent for `company_status`, then `get_brand` / `get_voice_rules`.
+1. Call `groundwork_start_trial` after proof, status, and `demo_resume`.
+2. Give the returned Rarefied Earth claim URL to the human.
+3. The human completes Clerk and card checkout in a browser. The public tool creates no account, ticket, tenant, payment, or secret.
+4. Start the current Pro trial (card on file; converts at day 14 unless canceled).
+5. Connect `https://connector.rarefied.earth/mcp` in any MCP-compatible client using your tenant token.
+6. Ask your agent for `company_status`, then `get_brand` / `get_voice_rules`.
 
-Founding rates (while they last): Pro $49/mo · Operating $149/mo · Studio $299/mo. Month to month after trial. No setup fee on self-serve tiers.
+Founding rates (while they last): Pro $49/mo after its current live trial; Operating $149/mo and Studio $299/mo paid. Month to month. No setup fee on self-serve tiers.
 
 ## Path B: Operator deployment
 
