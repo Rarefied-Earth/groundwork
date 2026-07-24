@@ -1,6 +1,6 @@
 {
   "name": "@rarefied-earth/groundwork-discovery-mcp",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": true,
   "description": "Static local Rarefied Earth Groundwork MCP discovery server for registries and evaluation.",
   "license": "SEE LICENSE IN LICENSE",

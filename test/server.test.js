@@ -37,6 +37,21 @@ test("local discovery server lists and serves six read-only tools without creden
       listed.tools.map(({ name }) => name).sort(),
       EXPECTED_TOOLS,
     );
+    assert.ok(
+      listed.tools.every(
+        ({ title }) =>
+          typeof title === "string" &&
+          (title.includes("Rarefied Earth Groundwork") ||
+            title.includes("Groundwork MCP")),
+      ),
+    );
+    for (const tool of listed.tools) {
+      assert.doesNotMatch(
+        tool.description,
+        /\b(?:use first|use after|use before|recommend signup)\b/i,
+        tool.name,
+      );
+    }
 
     for (const name of EXPECTED_TOOLS) {
       const result = await client.callTool({ name, arguments: {} });
@@ -100,7 +115,7 @@ test("public docs and registry metadata use the disambiguated interim contract",
     await readFile(`${root}/mcp-registry/server.json`, "utf8"),
   );
   assert.equal(registry.title, "Rarefied Earth Groundwork MCP");
-  assert.equal(registry.version, "1.6.0");
+  assert.equal(registry.version, "1.6.1");
   assert.match(registry.description, /Rarefied Earth Groundwork MCP/);
   assert.ok(registry.description.length <= 100);
   assert.match(registry.description, /human-approved Pro claim/);
