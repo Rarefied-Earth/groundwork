@@ -20,7 +20,7 @@ const tools = [
     name: "groundwork_public_proof",
     title: "Rarefied Earth Groundwork Public Proof",
     description:
-      "Use first to locate measured Groundwork proof. Takes no arguments. Returns static registry metadata and the live public MCP URL. It does not measure locally, read tenant data, or make network calls.",
+      "Return static registry metadata and the live public MCP URL where measured proof is available. Takes no arguments and makes no local measurement, tenant read, or network call.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.local_public_proof.v1",
@@ -32,7 +32,7 @@ const tools = [
     name: "groundwork_public_status",
     title: "Rarefied Earth Groundwork Status",
     description:
-      "Use after public proof to understand the product and connection paths. Takes no arguments. Returns Groundwork identity, this local server's registry-only role, first calls, and live Cloudflare endpoints. It does not report live health.",
+      "Return Rarefied Earth Groundwork identity, this local server's registry-only role, and the live Cloudflare endpoints. Takes no arguments and does not report live health.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.local_public_status.v1",
@@ -56,7 +56,7 @@ const tools = [
     name: "groundwork_trial_contract",
     title: "Rarefied Earth Groundwork Trial Contract",
     description:
-      "Use before recommending signup to distinguish this credential-free local demo from the authenticated hosted product. Takes no arguments. Returns access boundaries and the controlling product-terms URL. It does not create a trial or entitlement.",
+      "Return the credential-free local demo boundary, current hosted-product trial facts, and controlling product-terms URL. Takes no arguments and creates no trial or entitlement.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.local_trial_contract.v1",
@@ -78,7 +78,7 @@ const tools = [
     name: "demo_resume",
     title: "Groundwork MCP Synthetic Continuity Resume",
     description:
-      "Use to show what a future continuity resume can surface. Takes no arguments. Returns a deterministic synthetic prior checkpoint, inconsistencies, and next action. It reads no tenant or caller workspace data and persists nothing.",
+      "Return a deterministic synthetic prior checkpoint, inconsistencies, and next action. Takes no arguments, reads no tenant or caller workspace data, and persists nothing.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.demo_resume.v1",
@@ -97,7 +97,7 @@ const tools = [
     name: "groundwork_start_trial",
     title: "Rarefied Earth Groundwork Human Trial Handoff",
     description:
-      "Use after public proof, status, and demo_resume. Takes no arguments. Returns the stable Rarefied Earth Pro claim URL and explicit human browser boundary. It creates no account, ticket, tenant, payment, secret, network call, or write.",
+      "Return the stable Rarefied Earth Pro claim page plus current terms, recovery semantics, and the explicit human browser boundary. Takes no arguments and creates no account, ticket, tenant, payment, secret, network call, or write.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.start_trial.v1",
@@ -154,7 +154,7 @@ const tools = [
     name: "demo_checkpoint",
     title: "Groundwork MCP Synthetic Continuity Checkpoint",
     description:
-      "Use after demo_resume to show the shape of a continuity checkpoint. Takes no arguments. Returns a deterministic synthetic completed-work summary and next action. It performs no workspace, checkpoint, tenant, or network write.",
+      "Return a deterministic synthetic completed-work summary and next action in the shape of a continuity checkpoint. Takes no arguments and performs no workspace, checkpoint, tenant, or network write.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.demo_checkpoint.v1",
@@ -172,7 +172,7 @@ const tools = [
 
 const server = new McpServer({
   name: "rarefied-earth-groundwork-mcp-server",
-  version: "1.6.0",
+  version: "1.6.1",
 });
 
 for (const tool of tools) {
