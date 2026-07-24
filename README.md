@@ -172,7 +172,7 @@ network call and no write. For measured proof and current hosted behavior, use
 ```
 
 Full walkthrough: [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)  
-Official MCP Registry: [`io.github.Rarefied-Earth/groundwork`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.Rarefied-Earth/groundwork) (v1.5.1). Pack source: [`mcp-registry/server.json`](mcp-registry/server.json).
+Official MCP Registry: [`io.github.Rarefied-Earth/groundwork`](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Rarefied-Earth/groundwork) (v1.6.1). Pack source: [`mcp-registry/server.json`](mcp-registry/server.json).
 
 ### Agent tools (once connected)
 
