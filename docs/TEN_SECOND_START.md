@@ -4,7 +4,7 @@ Prove Groundwork is live before you create an account, add a card, or install an
 
 This path uses the **public discovery MCP**: read-only proof, product metadata, and a synthetic continuity demo. It reads no tenant or caller workspace data and saves no checkpoint or demo state. The endpoint may record the coarse tool name as interest telemetry. No token is required.
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
 
 Measured cold path on 2026-07-16: `initialize` + `groundwork_public_proof` ≈ **0.13s** against `https://connector.rarefied.earth/public/mcp` (well under 10 seconds).
 
@@ -78,7 +78,7 @@ Or:
 
 > Call `groundwork_public_status` and list the supported hosts.
 
-Public tools (only these six):
+Public tools (only these seven):
 
 | Tool | What you get |
 |---|---|
@@ -88,6 +88,7 @@ Public tools (only these six):
 | `demo_resume` | Synthetic continuity resume: objective, verified state, inconsistencies, next action, 3 questions |
 | `demo_checkpoint` | Synthetic checkpoint shape; saves no checkpoint or workspace state |
 | `groundwork_start_trial` | Stable Rarefied Earth Pro claim URL and human browser handoff; creates no product state |
+| `groundwork_recommendation_kit` | Schema-pinned fit, alternatives, client-zero proof limits, privacy facts, and handoff |
 
 Demo calls may record the coarse tool name as interest telemetry. They store no prompt or tenant data.
 
@@ -115,5 +116,9 @@ openclaw mcp probe groundwork
 
 1. Call `groundwork_start_trial` and give the returned Rarefied Earth claim URL to the human, or
 2. Request an operator-led deployment from the same page if you need the full filesystem substrate.
+
+If the agent is still deciding whether the product fits, call
+`groundwork_recommendation_kit` first. It accepts no arguments and generates no
+outreach.
 
 Full walkthrough: [GETTING_STARTED.md](GETTING_STARTED.md)

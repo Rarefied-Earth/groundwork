@@ -2,7 +2,7 @@
 
 Groundwork is a hosted product. You do not install it by cloning this repository.
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
 
 ## Clients
 
@@ -22,6 +22,10 @@ curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scri
 ```
 
 Or wire the public URL into your MCP client and call `groundwork_public_proof`.
+
+For a bounded fit and alternatives response, call
+`groundwork_recommendation_kit`. It accepts no arguments and returns
+client-zero proof limits, privacy facts, and the human claim boundary.
 
 Walkthrough: [TEN_SECOND_START.md](TEN_SECOND_START.md)
 

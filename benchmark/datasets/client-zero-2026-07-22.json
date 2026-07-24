@@ -1,0 +1,34 @@
+{
+  "schema_version": "groundwork.benchmark_receipt.v1",
+  "scope": "rarefied_earth_client_zero",
+  "source_visibility": "private_inputs_public_aggregate",
+  "source": {
+    "repository": "Rarefied-Earth/rarefied-earth-ops",
+    "commit": "6d60d1d391eedf41177dbbe11434a7933352732a",
+    "catalog_version": "7a64303e4f9b",
+    "measurement": "context_cost_report.py over six configured AGENTS.md files"
+  },
+  "method": {
+    "token_estimator": "characters divided by four, approximately plus or minus 10 percent versus cl100k",
+    "reduction_formula": "(original_tokens - compressed_tokens) / original_tokens * 100",
+    "precision_check": "extract configured precision facts from each source and require every detected fact in the distilled corpus",
+    "rounding": "one decimal place"
+  },
+  "claim": {
+    "available_reduction_pct": 52.8,
+    "integrity_ok": true,
+    "measured_at": "2026-07-22T16:53:25.219472+00:00",
+    "precision_facts_preserved": 445,
+    "tokens_saved_per_load": 30962
+  },
+  "integrity": {
+    "algorithm": "sha256 of canonical JSON receipt excluding integrity",
+    "sha256": "237219456a096768ebcd9980b307bb19bc4745e9e3276c56633e603c00230313"
+  },
+  "limitations": [
+    "The source documents are private company operating files and are not published.",
+    "This receipt makes the historical aggregate verifiable; it does not rerun the calculation or let a third party inspect the private source text.",
+    "The result is one client-zero measurement, not a customer average or performance guarantee.",
+    "The token count is an estimator, not provider billing telemetry."
+  ]
+}
