@@ -1,6 +1,6 @@
 # MCP Registry pack
 
-Publish candidate for the official MCP Registry as **`io.github.Rarefied-Earth/groundwork`** v1.6.1. Live registry remains v1.5.1 until this artifact is published after the connector release.
+Published to the official MCP Registry as **`io.github.Rarefied-Earth/groundwork`** v1.6.1 on 2026-07-24. The registry marks v1.6.1 as latest.
 
 Verify:
 
