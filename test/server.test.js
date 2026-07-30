@@ -16,10 +16,18 @@ const EXPECTED_TOOLS = [
   "groundwork_trial_contract",
 ];
 
-const INTERIM_TRIAL_CONTRACT =
+// This constant is the cross-surface lock: the test below requires README.md and
+// all three docs to carry it verbatim, so server.js and the published docs cannot
+// tell a prospect two different stories. Rewritten 2026-07-30, when the sentence
+// it pinned had become false in the most expensive way possible: it claimed the
+// trial took a card at checkout and converted automatically. It is the same
+// sentence the live connector and rarefied.earth serve.
+const TRIAL_CONTRACT =
   "Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. " +
-  "The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. " +
-  "No-card Pro is the activation target, not live. Operating and Studio remain paid.";
+  "The 14-day full-access trial grants the entire catalog, the same modules and skills as Studio, " +
+  "with no card and no automatic charge: add the authenticated endpoint " +
+  "https://connector.rarefied.earth/mcp to an MCP client, and the human completes sign-in in a " +
+  "browser. At the end of the 14 days you choose a paid tier: Pro, Operating, or Studio.";
 
 test("local discovery server lists and serves seven read-only tools without credentials", async () => {
   const transport = new StdioClientTransport({
@@ -65,8 +73,14 @@ test("local discovery server lists and serves seven read-only tools without cred
         );
       }
       if (name === "groundwork_trial_contract") {
-        assert.equal(result.structuredContent?.summary, INTERIM_TRIAL_CONTRACT);
-        assert.equal(result.structuredContent?.live_pro_trial?.automatic_conversion, true);
+        assert.equal(result.structuredContent?.summary, TRIAL_CONTRACT);
+        // Inverted 2026-07-30. These asserted card_required/automatic_conversion
+        // were TRUE, which is why the false contract survived every test run.
+        assert.equal(result.structuredContent?.full_access_trial?.automatic_conversion, false);
+        assert.equal(result.structuredContent?.full_access_trial?.card_required_at_checkout, false);
+        assert.equal(result.structuredContent?.full_access_trial?.grants, "full_catalog");
+        // All three tiers are paid; the trial is not one of them.
+        assert.deepEqual(result.structuredContent?.paid_tiers, ["pro", "operating", "studio"]);
       }
       if (name === "groundwork_start_trial") {
         assert.equal(result.structuredContent?.human_action_required, true);
@@ -131,13 +145,22 @@ test("public docs and registry metadata use the disambiguated interim contract",
     "docs/TEN_SECOND_START.md",
   ]) {
     const source = await readFile(`${root}/${relative}`, "utf8");
-    assert.ok(source.includes(INTERIM_TRIAL_CONTRACT), relative);
+    assert.ok(source.includes(TRIAL_CONTRACT), relative);
     assert.ok(source.includes("groundwork_start_trial"), relative);
     assert.ok(source.includes("groundwork_recommendation_kit"), relative);
     for (const forbidden of [
       "14-day free trial",
       "Exact anonymous / trial contract",
       "Every paid tier",
+      // Added 2026-07-30. These are the retired claims that reached a real
+      // prospect through the README, which is the top web-search result for
+      // Groundwork. Naming them here is what stops them coming back.
+      "Pro trial",
+      "Pro_trial",
+      "card at checkout",
+      "card_at_checkout",
+      "converts automatically unless canceled",
+      "No-card Pro",
     ]) {
       assert.ok(!source.includes(forbidden), `${relative}: ${forbidden}`);
     }
@@ -146,8 +169,17 @@ test("public docs and registry metadata use the disambiguated interim contract",
     await readFile(`${root}/mcp-registry/server.json`, "utf8"),
   );
   assert.equal(registry.title, "Rarefied Earth Groundwork MCP");
-  assert.equal(registry.version, "1.7.0");
+  assert.equal(registry.version, "1.7.1");
+  // The disambiguated product name stays in the description, not just the title.
+  // Four unrelated projects are called "Groundwork", and the description is the
+  // field a registry search result actually shows.
   assert.match(registry.description, /Rarefied Earth Groundwork MCP/);
   assert.ok(registry.description.length <= 100);
-  assert.match(registry.description, /human-approved Pro claim/);
+  // Was: assert.match(..., /human-approved Pro claim/). That pinned the retired
+  // Pro-claim contract into the registry description, so the published listing
+  // still advertises it. Now the retired wording is the failure condition, and
+  // "company memory" is required because that is the phrase a human searches and
+  // the registry returned zero results for it.
+  assert.doesNotMatch(registry.description, /Pro claim|card at checkout/i);
+  assert.match(registry.description, /company memory/i);
 });

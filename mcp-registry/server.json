@@ -2,13 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Rarefied-Earth/groundwork",
   "title": "Rarefied Earth Groundwork MCP",
-  "description": "Company memory for AI agents over MCP: brand, voice, charter, priorities, and module catalog.",
+  "description": "Rarefied Earth Groundwork MCP: company memory for AI agents. Brand, voice, charter, modules.",
   "websiteUrl": "https://rarefied.earth/groundwork",
   "repository": {
     "url": "https://github.com/Rarefied-Earth/groundwork",
     "source": "github"
   },
-  "version": "1.7.0",
+  "version": "1.7.1",
   "remotes": [
     {
       "type": "streamable-http",

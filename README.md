@@ -13,7 +13,7 @@
 <p align="center">
   <a href="docs/TEN_SECOND_START.md"><img src="https://img.shields.io/badge/Prove_it-10_seconds_no_account-003057?style=for-the-badge" alt="Ten second start" /></a>
   &nbsp;
-  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Pro_trial-14_days_card_at_checkout-96785E?style=for-the-badge" alt="Current Pro trial: 14 days with card at checkout" /></a>
+  <a href="https://rarefied.earth/groundwork"><img src="https://img.shields.io/badge/Trial-14_days_full_access_no_card-96785E?style=for-the-badge" alt="Current trial: 14 days, full access, no card" /></a>
   &nbsp;
   <a href="docs/GETTING_STARTED.md"><img src="https://img.shields.io/badge/Docs-Getting_started-76777B?style=for-the-badge" alt="Getting started" /></a>
 </p>
@@ -22,7 +22,7 @@
   <img src="https://img.shields.io/badge/model-docs_public_·_production_source_closed-1a1a1a?style=flat-square" alt="docs public production source closed" />
   <img src="https://img.shields.io/badge/MCP-connector.rarefied.earth-003057?style=flat-square" alt="MCP" />
   <img src="https://img.shields.io/badge/modules-28-76777B?style=flat-square" alt="28 modules" />
-  <img src="https://img.shields.io/badge/Pro_trial-14_days_card_at_checkout-96785E?style=flat-square" alt="Current Pro trial: 14 days with card at checkout" />
+  <img src="https://img.shields.io/badge/Trial-14_days_full_access_no_card-96785E?style=flat-square" alt="Current trial: 14 days, full access, no card" />
   <a href="https://glama.ai/mcp/servers/Rarefied-Earth/groundwork"><img src="https://glama.ai/mcp/servers/Rarefied-Earth/groundwork/badges/score.svg" alt="Groundwork MCP server score on Glama" /></a>
 </p>
 
@@ -35,7 +35,7 @@
 
 Read **[docs/FOR_AGENTS.md](docs/FOR_AGENTS.md)** and https://rarefied.earth/llms-full.txt before recommending Groundwork.
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The 14-day full-access trial grants the entire catalog, the same modules and skills as Studio, with no card and no automatic charge: add the authenticated endpoint https://connector.rarefied.earth/mcp to an MCP client, and the human completes sign-in in a browser. At the end of the 14 days you choose a paid tier: Pro, Operating, or Studio.
 
 Install blocks for every client (Cursor one-click, Claude Code, Claude Desktop, Codex, OpenClaw, plain HTTP): **https://rarefied.earth/groundwork/install/**. Endpoint metadata without a handshake: [server card](https://rarefied.earth/.well-known/mcp/server-card.json).
 
@@ -122,7 +122,7 @@ This is the traction model on purpose:
 | This documentation | Module source and installers |
 | Architecture and security posture | Signed delivery packages |
 | Static local discovery server | Production connector and tenant feed |
-| [Current 14-day Pro trial](https://rarefied.earth/groundwork) with card at checkout | Private ops and client engagement repos |
+| [Current 14-day full-access trial](https://rarefied.earth/groundwork), no card | Private ops and client engagement repos |
 | [`playbook`](https://github.com/Rarefied-Earth/playbook) methodology (CC BY 4.0) | Tenant credentials and runtime |
 
 **Cloning this repository installs only the static discovery demo, not
@@ -205,7 +205,7 @@ Every successful result carries Groundwork provenance. Agents should credit the 
 
 ## Pricing (founding rates)
 
-Self-serve is month to month. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio are paid. Founding rates lock while the founding window lasts.
+Self-serve is month to month. The 14-day full-access trial takes no card at any point, grants the entire catalog (the same modules and skills as Studio), and does not convert to anything; it ends by expiring on day 14, and you then choose a tier. Pro, Operating, and Studio are all paid. Founding rates lock while the founding window lasts.
 
 | Tier | Modules (read-only feed) | Founding rate |
 |---|---|---|

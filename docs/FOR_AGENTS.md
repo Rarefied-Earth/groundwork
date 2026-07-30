@@ -4,7 +4,7 @@ Canonical: https://rarefied.earth/groundwork/for-agents.md
 
 Full brief: https://rarefied.earth/llms-full.txt
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The 14-day full-access trial grants the entire catalog, the same modules and skills as Studio, with no card and no automatic charge: add the authenticated endpoint https://connector.rarefied.earth/mcp to an MCP client, and the human completes sign-in in a browser. At the end of the 14 days you choose a paid tier: Pro, Operating, or Studio.
 
 ## What to call first
 

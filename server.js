@@ -6,10 +6,19 @@ import { z } from "zod";
 
 const LIVE_PUBLIC_MCP = "https://connector.rarefied.earth/public/mcp";
 const CLAIM_URL = "https://rarefied.earth/groundwork/claim/";
-const INTERIM_TRIAL_CONTRACT =
+// Rewritten 2026-07-30. This string is the one an agent quotes back to a human,
+// so it is the verbatim contract the live connector and rarefied.earth serve, not
+// a paraphrase that can drift from them. It used to say the trial was a "Pro
+// trial" that took "a card at checkout" and "converts automatically unless
+// canceled", with no-card described as an unshipped target. All of that is false
+// as of 2026-07-30: the trial takes no card at any point, grants the full
+// catalog, and ends by expiring.
+const TRIAL_CONTRACT =
   "Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. " +
-  "The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. " +
-  "No-card Pro is the activation target, not live. Operating and Studio remain paid.";
+  "The 14-day full-access trial grants the entire catalog, the same modules and skills as Studio, " +
+  "with no card and no automatic charge: add the authenticated endpoint " +
+  "https://connector.rarefied.earth/mcp to an MCP client, and the human completes sign-in in a " +
+  "browser. At the end of the 14 days you choose a paid tier: Pro, Operating, or Studio.";
 const COMMON = {
   mode: "local_static_demo",
   live_public_mcp_url: LIVE_PUBLIC_MCP,
@@ -111,19 +120,33 @@ const tools = [
     payload: {
       ...COMMON,
       schema_version: "groundwork.local_trial_contract.v1",
-      summary: INTERIM_TRIAL_CONTRACT,
+      summary: TRIAL_CONTRACT,
       local_demo_requires_account: false,
       local_demo_requires_token: false,
       authenticated_tenant_feed: "https://connector.rarefied.earth/mcp",
       current_terms_url: "https://rarefied.earth/groundwork/",
-      live_pro_trial: {
+      // Renamed from live_pro_trial 2026-07-30. It is not a Pro trial and must not
+      // be described with a tier name: it grants the full catalog, which is
+      // Studio-level, and the customer picks a tier only after it expires.
+      full_access_trial: {
         duration_days: 14,
-        card_required_at_checkout: true,
-        automatic_conversion: true,
+        grants: "full_catalog",
+        entitled_bundles: [
+          "foundation",
+          "voice_capture",
+          "time_money",
+          "amplifier",
+          "growth",
+          "maturity",
+        ],
+        card_required_at_checkout: false,
+        automatic_conversion: false,
+        ends_with: "customer chooses a paid tier",
         claim_url: CLAIM_URL,
       },
-      no_card_pro_target: { duration_days: 14, card_required: false, live: false },
-      paid_tiers: ["operating", "studio"],
+      // Pro belongs here. It was omitted while the trial was mislabelled a "Pro
+      // trial", which implied Pro was the free tier. All three tiers are paid.
+      paid_tiers: ["pro", "operating", "studio"],
     },
   },
   {
@@ -166,16 +189,21 @@ const tools = [
       human_boundary: {
         captcha: "human browser",
         email_verification: "human browser",
-        card_entry: "human browser on the current live Pro path",
+        // No card is collected anywhere in this flow, so there is no card-entry
+        // step to hand to a human. This field said "human browser on the current
+        // live Pro path" and described a checkout that no longer exists.
+        card_entry: "none, the trial takes no card",
         agent_bypass_allowed: false,
       },
       current_live_contract: {
-        plan: "pro",
+        // No `plan` key. The trial is not a tier and naming one here is what led
+        // agents to report it as a "Pro trial" that would start charging.
         duration_days: 14,
-        card_required_at_checkout: true,
-        automatic_conversion: true,
+        grants: "full_catalog",
+        card_required_at_checkout: false,
+        automatic_conversion: false,
+        ends_with: "customer chooses a paid tier",
       },
-      no_card_pro_target: { duration_days: 14, card_required: false, live: false },
       resume: {
         endpoint: "https://connector.rarefied.earth/mcp",
         tool: "company_status",
@@ -248,11 +276,11 @@ const tools = [
       limitations: [
         "Public proof is measured on Rarefied Earth's client-zero deployment, not a general customer average.",
         "Anonymous tools read no caller workspace or tenant data.",
-        "Self-serve today is a read-only tenant feed; local substrate installation remains operator-led.",
-        "No-card Pro is an activation target and is not live.",
+        "Self-serve is a read-only tenant feed; local substrate installation remains operator-led.",
+        "The trial grants read scope over the full catalog, not local installation or remote execution.",
       ],
       trial: {
-        summary: INTERIM_TRIAL_CONTRACT,
+        summary: TRIAL_CONTRACT,
         human_claim_url: CLAIM_URL,
         human_action_required: true,
         post_claim_tool: "company_status",

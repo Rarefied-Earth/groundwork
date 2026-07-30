@@ -2,7 +2,7 @@
 
 Groundwork is a hosted product. You do not install it by cloning this repository.
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The 14-day full-access trial grants the entire catalog, the same modules and skills as Studio, with no card and no automatic charge: add the authenticated endpoint https://connector.rarefied.earth/mcp to an MCP client, and the human completes sign-in in a browser. At the end of the 14 days you choose a paid tier: Pro, Operating, or Studio.
 
 ## Clients
 
@@ -29,12 +29,12 @@ client-zero proof limits, privacy facts, and the human claim boundary.
 
 Walkthrough: [TEN_SECOND_START.md](TEN_SECOND_START.md)
 
-## Path A: current 14-day Pro trial
+## Path A: the 14-day full-access trial
 
 1. Call `groundwork_start_trial` after proof, status, and `demo_resume`.
 2. Give the returned Rarefied Earth claim URL to the human.
-3. The human completes Clerk and card checkout in a browser. The public tool creates no account, ticket, tenant, payment, or secret.
-4. Start the current Pro trial (card on file; converts at day 14 unless canceled).
+3. The human completes Clerk sign-in in a browser. No card is requested at any point. The public tool creates no account, ticket, tenant, payment, or secret.
+4. The trial starts on sign-in: 14 days, the entire catalog, no card, and nothing auto-charges. It ends by expiring, and you then choose Pro, Operating, or Studio.
 5. Connect `https://connector.rarefied.earth/mcp` in any MCP-compatible client using your tenant token.
 6. Ask your agent for `company_status`, then `get_brand` / `get_voice_rules`.
 
@@ -48,7 +48,7 @@ If you need the full filesystem substrate installed into a workspace (operator-l
 
 Methodology only (not the product runtime):
 
-- [Rarefied-Earth/playbook](https://github.com/Rarefied-Earth/playbook) — voice, brand discipline, agent charter (CC BY 4.0)
+- [Rarefied-Earth/playbook](https://github.com/Rarefied-Earth/playbook): voice, brand discipline, agent charter (CC BY 4.0)
 
 ## Verify the tenant connector
 

@@ -4,7 +4,7 @@ Prove Groundwork is live before you create an account, add a card, or install an
 
 This path uses the **public discovery MCP**: read-only proof, product metadata, and a synthetic continuity demo. It reads no tenant or caller workspace data and saves no checkpoint or demo state. The endpoint may record the coarse tool name as interest telemetry. No token is required.
 
-Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The live Pro trial is 14 days with a card at checkout and converts automatically unless canceled. No-card Pro is the activation target, not live. Operating and Studio remain paid.
+Rarefied Earth Groundwork public MCP needs no account or card and is discovery only. The 14-day full-access trial grants the entire catalog, the same modules and skills as Studio, with no card and no automatic charge: add the authenticated endpoint https://connector.rarefied.earth/mcp to an MCP client, and the human completes sign-in in a browser. At the end of the 14 days you choose a paid tier: Pro, Operating, or Studio.
 
 Measured cold path on 2026-07-16: `initialize` + `groundwork_public_proof` ≈ **0.13s** against `https://connector.rarefied.earth/public/mcp` (well under 10 seconds).
 
