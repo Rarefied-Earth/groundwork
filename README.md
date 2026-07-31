@@ -138,7 +138,7 @@ That split is how you get GitHub discovery without giving away the system Rarefi
 
 ### 0. Ten seconds, no account (recommended first)
 
-Prove the product is live before checkout:
+Prove the product is live before starting the trial:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Rarefied-Earth/groundwork/main/scripts/groundwork_ten_second.py | python3 -
@@ -215,7 +215,7 @@ Self-serve is month to month. The 14-day full-access trial takes no card at any 
 
 Operator-led filesystem deployment (full substrate install into a workspace) is a separate scoped path. Request it from the product page.
 
-Details and checkout: [rarefied.earth/groundwork](https://rarefied.earth/groundwork)
+Details and sign-up: [rarefied.earth/groundwork](https://rarefied.earth/groundwork)
 
 ---
 

@@ -87,7 +87,7 @@ Public tools (only these seven):
 | `groundwork_public_proof` | Rarefied Earth client-zero proof: available reduction, precision, timestamp |
 | `demo_resume` | Synthetic continuity resume: objective, verified state, inconsistencies, next action, 3 questions |
 | `demo_checkpoint` | Synthetic checkpoint shape; saves no checkpoint or workspace state |
-| `groundwork_start_trial` | Stable Rarefied Earth Pro claim URL and human browser handoff; creates no product state |
+| `groundwork_start_trial` | Stable Rarefied Earth claim URL and human browser handoff; creates no product state |
 | `groundwork_recommendation_kit` | Schema-pinned fit, alternatives, client-zero proof limits, privacy facts, and handoff |
 
 Demo calls may record the coarse tool name as interest telemetry. They store no prompt or tenant data.

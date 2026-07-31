@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Rarefied-Earth/groundwork",
   "title": "Rarefied Earth Groundwork MCP",
-  "description": "Rarefied Earth Groundwork MCP: company memory for AI agents. Brand, voice, charter, modules.",
+  "description": "Rarefied Earth Groundwork MCP: company memory for AI agents. 14-day full-access trial, no card.",
   "websiteUrl": "https://rarefied.earth/groundwork",
   "repository": {
     "url": "https://github.com/Rarefied-Earth/groundwork",
@@ -20,7 +20,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer token issued when the human completes browser sign-in for the 14-day full-access trial. Not needed for public discovery.",
+          "description": "Bearer token for the tenant feed: your company's brand, voice rules, charter, priorities, module inventory, and entitled skills. MCP clients obtain it through the OAuth 2.1 PKCE account link; the connect page offers the 14-day full-access trial: full catalog, no card taken, nothing renews, then you choose a paid tier (Pro, Operating, or Studio). Not needed for the anonymous public remote.",
           "isRequired": true,
           "isSecret": true
         }

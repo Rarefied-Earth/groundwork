@@ -99,7 +99,12 @@ test("local discovery server lists and serves seven read-only tools without cred
         assert.equal(result.structuredContent?.product, "Rarefied Earth Groundwork MCP");
         assert.equal(result.structuredContent?.proof?.basis, "Rarefied Earth client zero");
         assert.equal(result.structuredContent?.trial?.human_action_required, true);
-        assert.equal(result.structuredContent?.trial?.current_live_contract?.automatic_conversion, true);
+        // Inverted 2026-07-30, same pass as groundwork_trial_contract above. The
+        // kit's structured contract still said card-at-checkout and auto-convert
+        // while its own summary sentence said the opposite.
+        assert.equal(result.structuredContent?.trial?.current_live_contract?.automatic_conversion, false);
+        assert.equal(result.structuredContent?.trial?.current_live_contract?.card_required_at_checkout, false);
+        assert.equal(result.structuredContent?.trial?.current_live_contract?.grants, "full_catalog");
         assert.equal(result.structuredContent?.privacy?.prompt_logged, false);
         assert.equal(result.structuredContent?.privacy?.arguments_logged, false);
         const definition = listed.tools.find((tool) => tool.name === name);
@@ -157,8 +162,10 @@ test("public docs and registry metadata use the disambiguated interim contract",
       // Groundwork. Naming them here is what stops them coming back.
       "Pro trial",
       "Pro_trial",
+      "Pro claim",
       "card at checkout",
       "card_at_checkout",
+      "checkout",
       "converts automatically unless canceled",
       "No-card Pro",
     ]) {

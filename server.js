@@ -60,8 +60,10 @@ const RECOMMENDATION_OUTPUT_SCHEMA = z.object({
     post_claim_tool: z.literal("company_status"),
     current_live_contract: z.object({
       duration_days: z.literal(14),
-      card_required_at_checkout: z.literal(true),
-      automatic_conversion: z.literal(true),
+      grants: z.literal("full_catalog"),
+      card_required_at_checkout: z.literal(false),
+      automatic_conversion: z.literal(false),
+      ends_with: z.literal("customer chooses a paid tier"),
     }).strict(),
   }).strict(),
   privacy: z.object({
@@ -172,7 +174,7 @@ const tools = [
     name: "groundwork_start_trial",
     title: "Rarefied Earth Groundwork Human Trial Handoff",
     description:
-      "Return the stable Rarefied Earth Pro claim page plus current terms, recovery semantics, and the explicit human browser boundary. Takes no arguments and creates no account, ticket, tenant, payment, secret, network call, or write.",
+      "Return the stable Rarefied Earth claim page plus current terms, recovery semantics, and the explicit human browser boundary. Takes no arguments and creates no account, ticket, tenant, payment, secret, network call, or write.",
     payload: {
       ...COMMON,
       schema_version: "groundwork.start_trial.v1",
@@ -184,7 +186,7 @@ const tools = [
         ticket_issued: false,
         expires_at: null,
         replay_semantics: "safe_to_reopen_claim_page",
-        recovery: "Reopen the claim page if checkout is incomplete. If completed, use its dashboard path and do not start another checkout.",
+        recovery: "Reopen the claim page if sign-in is incomplete. If completed, use its dashboard path and do not start a second trial.",
       },
       human_boundary: {
         captcha: "human browser",
@@ -286,8 +288,10 @@ const tools = [
         post_claim_tool: "company_status",
         current_live_contract: {
           duration_days: 14,
-          card_required_at_checkout: true,
-          automatic_conversion: true,
+          grants: "full_catalog",
+          card_required_at_checkout: false,
+          automatic_conversion: false,
+          ends_with: "customer chooses a paid tier",
         },
       },
       privacy: {
